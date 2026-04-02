@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://ubu6jk5f5v2v" path="res://Assets/Scenes/noma.tscn" id="5_eityt"]
 [ext_resource type="PackedScene" uid="uid://cxaw268khvbmr" path="res://Assets/Scenes/artefact.tscn" id="7_plg4c"]
 [ext_resource type="PackedScene" uid="uid://cvfg05fejs68i" path="res://Assets/Scenes/exit.tscn" id="8_8v3eq"]
+[ext_resource type="PackedScene" uid="uid://d1mhfajs4jd8l" path="res://Assets/Scenes/mishak01.tscn" id="8_51a03"]
 [ext_resource type="PackedScene" uid="uid://cyi2nb3gu4jbd" path="res://Assets/Scenes/start_dialog_area.tscn" id="8_trc6p"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_uoyjf"]
@@ -343,6 +344,9 @@ position = Vector2(116, 557)
 label_dialogs = Array[String](["Bonjour !", "Pourquoi tu a l'air triste ?"])
 
 [node name="Enemies" type="Node2D" parent="." unique_id=1657907342]
+
+[node name="Enemie" parent="Enemies" unique_id=78358566 instance=ExtResource("8_51a03")]
+position = Vector2(629.00006, 627.00006)
 
 [node name="ExitLast" parent="." unique_id=1608225644 instance=ExtResource("8_8v3eq")]
 position = Vector2(109, 23)
