@@ -1,0 +1,116 @@
+[gd_scene format=3 uid="uid://d1mhfajs4jd8l"]
+
+[ext_resource type="Script" uid="uid://2v6oksgx76qb" path="res://Assets/Scripts/enemie.gd" id="1_2c6yn"]
+[ext_resource type="Texture2D" uid="uid://bfn4b8mqgalx4" path="res://Assets/Sprites/Enemies/Mishak01/Mish-Idle/running Animation 32x32 (16x16)1.png" id="2_nycx6"]
+[ext_resource type="Texture2D" uid="uid://bs0f0g8e3pk3o" path="res://Assets/Sprites/Enemies/Mishak01/Mish-Idle/running Animation 32x32 (16x16)2.png" id="3_rhetu"]
+[ext_resource type="Texture2D" uid="uid://dhxcauyke0kn" path="res://Assets/Sprites/Enemies/Mishak01/Mish-Idle/running Animation 32x32 (16x16)3.png" id="4_mrea4"]
+[ext_resource type="Texture2D" uid="uid://x3rpxlnqo3mi" path="res://Assets/Sprites/Enemies/Mishak01/Mish-Idle/running Animation 32x32 (16x16)4.png" id="5_kfnrn"]
+[ext_resource type="Texture2D" uid="uid://dv471etq4q7mu" path="res://Assets/Sprites/Enemies/Mishak01/Mish-Idle/running Animation 32x32 (16x16)5.png" id="6_nacpu"]
+[ext_resource type="Texture2D" uid="uid://dhpjbngmq6nki" path="res://Assets/Sprites/Enemies/Mishak01/Mish-Idle/running Animation 32x32 (16x16)6.png" id="7_h312u"]
+[ext_resource type="Texture2D" uid="uid://c0q6sckxs75sa" path="res://Assets/Sprites/Enemies/Mishak01/Mish-Idle/running Animation 32x32 (16x16)7.png" id="8_c5vtu"]
+[ext_resource type="Texture2D" uid="uid://0otg7v62f6wg" path="res://Assets/Sprites/Enemies/Mishak01/Mish-Idle/running Animation 32x32 (16x16)8.png" id="9_t2fxu"]
+[ext_resource type="Texture2D" uid="uid://cx4odiplkq82g" path="res://Assets/Sprites/Enemies/Mishak01/Mish-Idle/running Animation 32x32 (16x16)9.png" id="10_qgh8u"]
+[ext_resource type="Texture2D" uid="uid://b6v0422i3vidt" path="res://Assets/Sprites/Enemies/Mishak01/Mish-Idle-Bad/mish idle bad 32x32 (16x16).png" id="11_brh3d"]
+[ext_resource type="Texture2D" uid="uid://bgetjq41cwl3o" path="res://Assets/Sprites/Enemies/Mishak01/Mish-Running/running Animation 32x32 (16x16)1.png" id="12_uqvok"]
+[ext_resource type="Texture2D" uid="uid://3xt4mcfmx5ms" path="res://Assets/Sprites/Enemies/Mishak01/Mish-Running/running Animation 32x32 (16x16)2.png" id="13_iup30"]
+[ext_resource type="Texture2D" uid="uid://ckxixrx3ec414" path="res://Assets/Sprites/Enemies/Mishak01/Mish-Running/running Animation 32x32 (16x16)3.png" id="14_2xhin"]
+[ext_resource type="Texture2D" uid="uid://vjad62agwowm" path="res://Assets/Sprites/Enemies/Mishak01/Mish-Running/running Animation 32x32 (16x16)4.png" id="15_1qaa8"]
+[ext_resource type="Texture2D" uid="uid://6d3yw7rd6dnb" path="res://Assets/Sprites/Enemies/Mishak01/Mish-Running/running Animation 32x32 (16x16)5.png" id="16_2mhks"]
+[ext_resource type="Texture2D" uid="uid://bonv4qftkjnd" path="res://Assets/Sprites/Enemies/Mishak01/Mish-Running/running Animation 32x32 (16x16)6.png" id="17_yiacc"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_5l0yl"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_nycx6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_rhetu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_mrea4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_kfnrn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_nacpu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_h312u")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_c5vtu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_t2fxu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_qgh8u")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("11_brh3d")
+}],
+"loop": false,
+"name": &"idle-bad",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("12_uqvok")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_iup30")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_2xhin")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_1qaa8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_2mhks")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_yiacc")
+}],
+"loop": true,
+"name": &"running",
+"speed": 10.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nycx6"]
+size = Vector2(10.8, 16.400002)
+
+[node name="Enemie" type="Node2D" unique_id=78358566]
+scale = Vector2(5, 5)
+script = ExtResource("1_2c6yn")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1150839819]
+scale = Vector2(0.99999994, 0.99999994)
+sprite_frames = SubResource("SpriteFrames_5l0yl")
+animation = &"running"
+autoplay = "running"
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1766875796]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=476994634]
+position = Vector2(-0.4000001, 1.8)
+scale = Vector2(0.99999976, 0.99999976)
+shape = SubResource("RectangleShape2D_nycx6")
+
+[node name="LedgeRay" type="RayCast2D" parent="." unique_id=1648475838]
+position = Vector2(8.199999, 6.2)
+target_position = Vector2(0, 11.4)
+
+[node name="WallRay" type="RayCast2D" parent="." unique_id=153075017]
+position = Vector2(2.8, 1.1920929e-07)
+rotation = -0.34528542
+target_position = Vector2(7.736604, 2.7175264)
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

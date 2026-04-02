@@ -1,0 +1,49 @@
+Elle collectionne des artéfacts sur la route
+Elle nous rencontre en pixelart idle et nous parle
+Ennemi de type mort vivant donc elle dmg quand elle heal, sa les raménent à la vie  et il font un coeur
+
+TO DO
+Cancel - Gerrer les dimensions
+Done - Gerer l'infinite interact dialog et le fall anim block
+Done - Controll S ou fleche du bas sur les plateformes te fait tomber (mettre sur plateformes ?)
+- CONNECT GIT
+Done - Add dmg effect anim et code
+Done - Start Dialog Area
+
+- Sprite - Anim d'attaque
+Boss de zone lié à nous
+- Nous en pixelart (plutôt image de merde ?):
+	Norrin (envoi des spells aléas)
+	Maximilien (t'inverse les controle)
+	Adelas (te frappe)
+	Maestro (te fige de sa beauté)
+
+Done - Setup level2 affiche hud artéfact
+Done - Hud artéfact
+Done - Artéfact script
+Done - Add la touche pour prier aprés level 2 andrasté
+Done - Add un systéme de pv bar
+Done - 2 level c'est une statue qui t'apprend à prier (adrasté te dit un truc du genre [text])
+Done - Changer en RigidBody 2d et mettre une anim de fall quand not on ground et sinon idle
+
+31/03
+Done - Trouver un moyen de keep l'animation de pray jusqua ce que lacher bouton
+Done - Pray heal
+
+
+01/04
+Done - Add Enemies en pixelart
+Done - Add hit anim et code (dans main quand hit)
+- Camera shake quand hit
+- Gerer le one way exit
+
+(6) - Elements de decords fun like bumper
+
+- On croise maximilien qui negocie tres mal avec un marchands
+
+- Dans la salle statue tu aura les artéfacts en bas
+
+- A un moment tu peut echnager tes artéfact contre la voix kawai de saut et plein d'aute truc de base
+
+Le level 3 c'est le monde des bisounours et t'a une musique kawaï, dialog poisson puis attaque de poisson
+quand poisson content tu met voice cute et un "ouaiii" d'enfant

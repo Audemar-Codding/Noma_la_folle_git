@@ -1,0 +1,90 @@
+[gd_scene format=3 uid="uid://cimg3nxbew0gd"]
+
+[ext_resource type="Script" uid="uid://dhuerehxmlm1i" path="res://Assets/Scripts/menu.gd" id="1_j1b4o"]
+[ext_resource type="FontFile" uid="uid://cvyub25h05w0d" path="res://Assets/Fonts/MysteryQuest-Regular.ttf" id="2_fjdk5"]
+[ext_resource type="FontFile" uid="uid://cy3ru073pll71" path="res://Assets/Fonts/Silkscreen-Bold.ttf" id="3_hnoqu"]
+[ext_resource type="Texture2D" uid="uid://bufg6kacr7wdu" path="res://Assets/Sprites/Noma/portrait.png" id="4_dkalm"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_158mb"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_wwsa2"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_jsrd8"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_wbdvm"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_q3rjx"]
+
+[node name="Menu" type="Node2D" unique_id=1193133868]
+script = ExtResource("1_j1b4o")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1176422327]
+offset_right = 640.0
+offset_bottom = 320.0
+color = Color(1.0039686, 0.48831058, 0, 1)
+
+[node name="ColorRect" type="ColorRect" parent="ColorRect" unique_id=840532751]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -318.0
+offset_top = -158.0
+offset_right = 318.0
+offset_bottom = 158.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.9843137)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=958225718]
+
+[node name="Title" type="Label" parent="CanvasLayer" unique_id=397941511]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -251.0
+offset_top = 1.0
+offset_right = 131.0
+offset_bottom = 244.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(1.004, 0.488, 0, 1)
+theme_override_constants/line_spacing = -15
+theme_override_fonts/font = ExtResource("2_fjdk5")
+theme_override_font_sizes/font_size = 75
+text = "NOMA 
+LA FOLLE"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Button" type="Button" parent="CanvasLayer" unique_id=1702207515]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -131.0
+offset_top = -99.0
+offset_right = 1.0
+offset_bottom = -58.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_vertical = 4
+theme_override_colors/font_color = Color(0.8745098, 0.8745098, 0.8745098, 0.6)
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("3_hnoqu")
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = SubResource("StyleBoxEmpty_158mb")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_wwsa2")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_jsrd8")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_wbdvm")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_q3rjx")
+text = "START"
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1692721150]
+position = Vector2(520, 195)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("4_dkalm")
+
+[connection signal="pressed" from="CanvasLayer/Button" to="." method="_on_button_pressed"]

@@ -1,0 +1,63 @@
+[gd_scene format=3 uid="uid://cstmk8uasbl5e"]
+
+[ext_resource type="Texture2D" uid="uid://vjdm1y10hrbe" path="res://Assets/Sprites/Sign/sign1.png" id="1_ed51k"]
+[ext_resource type="Script" uid="uid://bsljrwyf8g6j" path="res://Assets/Scripts/sign.gd" id="1_r5kgk"]
+[ext_resource type="Texture2D" uid="uid://bb3sfl85ikg3e" path="res://Assets/Sprites/Sign/sign2.png" id="2_r5kgk"]
+[ext_resource type="Texture2D" uid="uid://cdnevdd1kg3hq" path="res://Assets/Sprites/Sign/sign3.png" id="3_wncp2"]
+[ext_resource type="Texture2D" uid="uid://d6t3jt3uryrm" path="res://Assets/Sprites/Sign/sign4.png" id="4_llp3y"]
+[ext_resource type="FontFile" uid="uid://b1usx1lu1758v" path="res://Assets/Fonts/Silkscreen-Regular.ttf" id="6_wncp2"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_sf8no"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_ed51k")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_r5kgk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_wncp2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_llp3y")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 10.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ed51k"]
+size = Vector2(33.666668, 21.333334)
+
+[node name="Sign" type="Node2D" unique_id=542378513]
+texture_filter = 1
+scale = Vector2(3, 3)
+script = ExtResource("1_r5kgk")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=78081644]
+texture_filter = 1
+sprite_frames = SubResource("SpriteFrames_sf8no")
+animation = &"idle"
+autoplay = "idle"
+frame_progress = 0.45878226
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1369990663]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=958373683]
+position = Vector2(0.50000036, -2.666667)
+shape = SubResource("RectangleShape2D_ed51k")
+
+[node name="Label" type="Label" parent="." unique_id=621940028]
+visible = false
+offset_left = -38.0
+offset_top = -40.333332
+offset_right = 38.0
+offset_bottom = -17.333332
+size_flags_vertical = 0
+theme_override_fonts/font = ExtResource("6_wncp2")
+theme_override_font_sizes/font_size = 16
+text = "NO INFO"
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]

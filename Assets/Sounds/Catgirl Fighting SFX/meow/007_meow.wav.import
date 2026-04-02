@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://c42lw1ccu0jic"
+path="res://.godot/imported/007_meow.wav-1a9dc2d2b7223c8970b77dbd8e86c26e.sample"
+
+[deps]
+
+source_file="res://Assets/Sounds/Catgirl Fighting SFX/meow/007_meow.wav"
+dest_files=["res://.godot/imported/007_meow.wav-1a9dc2d2b7223c8970b77dbd8e86c26e.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

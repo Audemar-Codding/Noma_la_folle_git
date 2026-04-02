@@ -1,0 +1,118 @@
+[gd_scene format=3 uid="uid://bq2po3a3bt424"]
+
+[ext_resource type="PackedScene" uid="uid://ch16o86gmhx2f" path="res://Assets/Scenes/level1.tscn" id="1_l26l0"]
+[ext_resource type="Script" uid="uid://b8y6683qxt7uc" path="res://Assets/Scripts/main.gd" id="1_qplxx"]
+[ext_resource type="PackedScene" uid="uid://bceo4ys0v7rkw" path="res://Assets/Scenes/Textbox.tscn" id="3_elf4b"]
+[ext_resource type="FontFile" uid="uid://b1usx1lu1758v" path="res://Assets/Fonts/Silkscreen-Regular.ttf" id="4_rvsrt"]
+[ext_resource type="Texture2D" uid="uid://dpra3702xw2eg" path="res://Assets/Sprites/Artefacts/masque_riletoon.png" id="5_nacht"]
+[ext_resource type="AudioStream" uid="uid://cltlx6y15x7g1" path="res://Assets/Sounds/jump.wav" id="6_nacht"]
+[ext_resource type="AudioStream" uid="uid://coroeui2tigo7" path="res://Assets/Sounds/8bit-hurt.mp3" id="7_acsc0"]
+[ext_resource type="AudioStream" uid="uid://doohjnnfo7mtj" path="res://Assets/Sounds/Catgirl Fighting SFX/swing/001_swing.wav" id="8_f8o6k"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_acsc0"]
+bg_color = Color(0, 0, 0, 0.5568628)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rvsrt"]
+bg_color = Color(1, 0, 0, 0.27058825)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nacht"]
+bg_color = Color(1, 0, 0, 1)
+corner_radius_top_left = 2
+corner_radius_top_right = 2
+corner_radius_bottom_right = 2
+corner_radius_bottom_left = 2
+
+[node name="Main" type="Node2D" unique_id=1463828761]
+script = ExtResource("1_qplxx")
+
+[node name="LevelRoot" parent="." unique_id=1201006017 instance=ExtResource("1_l26l0")]
+
+[node name="Textbox" parent="." unique_id=1749957114 instance=ExtResource("3_elf4b")]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1216246600]
+
+[node name="ScorePanel" type="Panel" parent="CanvasLayer" unique_id=847241587]
+visible = false
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 50.0
+offset_top = -96.0
+offset_right = 200.0
+offset_bottom = -46.0
+grow_vertical = 0
+theme_override_styles/panel = SubResource("StyleBoxFlat_acsc0")
+
+[node name="Score" type="Label" parent="CanvasLayer/ScorePanel" unique_id=1638835281]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -48.0
+offset_top = -36.0
+offset_right = 18.0
+offset_bottom = 26.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("4_rvsrt")
+theme_override_font_sizes/font_size = 48
+text = "0"
+
+[node name="Sprite2D" type="Sprite2D" parent="CanvasLayer/ScorePanel" unique_id=1983086170]
+position = Vector2(120, 25)
+scale = Vector2(3, 3)
+texture = ExtResource("5_nacht")
+
+[node name="ViePanel" type="Panel" parent="CanvasLayer" unique_id=1459631091]
+offset_left = 1093.0
+offset_top = 632.0
+offset_right = 1243.0
+offset_bottom = 672.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_rvsrt")
+
+[node name="ActualViePanel" type="Panel" parent="CanvasLayer/ViePanel" unique_id=817895602]
+layout_mode = 0
+offset_left = 2.0
+offset_top = 2.0
+offset_right = 118.8
+offset_bottom = 38.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_nacht")
+
+[node name="Audio" type="Node2D" parent="." unique_id=76072490]
+
+[node name="Sounds" type="Node2D" parent="Audio" unique_id=1970111750]
+
+[node name="FillAudio" type="AudioStreamPlayer" parent="Audio/Sounds" unique_id=2110918123]
+stream = ExtResource("6_nacht")
+volume_db = -10.0
+pitch_scale = 0.36
+
+[node name="HitAudio" type="AudioStreamPlayer" parent="Audio/Sounds" unique_id=313665269]
+stream = ExtResource("7_acsc0")
+volume_db = -5.0
+
+[node name="VoiceHitAudio" type="AudioStreamPlayer" parent="Audio/Sounds" unique_id=936183760]
+stream = ExtResource("8_f8o6k")
+pitch_scale = 0.43
+
+[node name="Timers" type="Node2D" parent="." unique_id=889727627]
