@@ -88,6 +88,7 @@ pray={
 [layer_names]
 
 2d_physics/layer_2="Plateforms"
+2d_physics/layer_3="World"
 
 [physics]
 

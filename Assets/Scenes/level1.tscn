@@ -257,6 +257,7 @@ texture = ExtResource("2_8p6u1")
 
 [sub_resource type="TileSet" id="TileSet_wb28v"]
 physics_layer_0/collision_layer = 1
+physics_layer_0/collision_mask = 5
 sources/0 = SubResource("TileSetAtlasSource_uoyjf")
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_8p6u1"]
@@ -352,8 +353,6 @@ position = Vector2(119, 115.00001)
 [node name="StartDialogArea" parent="DialogAreas" unique_id=426438481 instance=ExtResource("8_dc3h5")]
 position = Vector2(943, 472)
 label_dialogs = Array[String](["HO !", "Un artéfact, trop bien !"])
-
-[node name="Enemies" type="Node2D" parent="." unique_id=1657907342]
 
 [node name="ExitNext" parent="." unique_id=1608225644 instance=ExtResource("9_dc3h5")]
 position = Vector2(1286, 194)

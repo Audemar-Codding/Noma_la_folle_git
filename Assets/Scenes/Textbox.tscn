@@ -570,6 +570,9 @@ cache/0/32/0/glyphs/181/texture_idx = 0
 
 [sub_resource type="FontFile" id="3"]
 fallbacks = Array[Font]([SubResource("2")])
+subpixel_positioning = 0
+msdf_pixel_range = 14
+msdf_size = 128
 cache/0/variation_coordinates = {}
 cache/0/face_index = 0
 cache/0/embolden = 0.0
@@ -637,6 +640,7 @@ theme_override_font_sizes/font_size = 32
 text = "* "
 
 [node name="Label" type="Label" parent="TextboxContainer/MarginContainer/HBoxContainer" unique_id=1770558422]
+custom_minimum_size = Vector2(600, 28)
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3

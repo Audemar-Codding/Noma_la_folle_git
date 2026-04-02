@@ -6,6 +6,7 @@ extends Node2D
 @export var dmg: float = 20.0
 @export var direction: float = -1.0
 @export var speed: float = 225.0
+var can_move := true
 
 var was_on_ledge := true
 var was_on_wall := true
@@ -13,7 +14,7 @@ var was_on_wall := true
 signal player_hit
 
 func _ready() -> void:
-	animated_sprite_2d.sprite_frames.set_animation_speed("running", (speed/225.0 * 10.0))
+	animated_sprite_2d.sprite_frames.set_animation_speed("moving", (speed/225.0 * 10.0))
 	if direction == -1.0:
 		animated_sprite_2d.flip_h = true
 		ledge_ray.position.x *= -1 
@@ -37,11 +38,11 @@ func _process(delta: float) -> void:
 		flip_enemie()
 	was_on_wall = wall_hit
 	
-	position.x += direction * speed * delta
-
-#func _on_wall_detect_area_2d_body_entered(body: Node2D) -> void:
-	#if body.name == "World":
-		#flip_enemie()
+	if can_move:
+		position.x += direction * speed * delta
+		animated_sprite_2d.play("moving")
+	else:
+		animated_sprite_2d.play("idle-bad")
 
 func flip_enemie() -> void:
 	direction *= -1.0

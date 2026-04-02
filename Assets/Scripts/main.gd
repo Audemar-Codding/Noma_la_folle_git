@@ -18,7 +18,7 @@ var level: int = 1
 var level_modif: int = 1
 var levelOneWay: bool = false
 var current_level_root: Node = null
-var noma: Node2D
+var noma: CharacterBody2D
 var nomalife: float = 80
 
 
@@ -37,7 +37,7 @@ func _load_level(level_number:int, first_level = false) -> void:
 	
 	# Change Level
 	var level_path = "res://Assets/Scenes/level%s.tscn" % level_number
-	current_level_root = load(level_path).instantiate()
+q	current_level_root = load(level_path).instantiate()
 	add_child(current_level_root)
 	current_level_root.name = "LevelRoot"
 	_setup_level(current_level_root)
@@ -141,7 +141,6 @@ func increase_score() -> void:
 	score.text = "%s" % current_score
 
 # ====== Damage gestion
-# Faut lié le signal aux enemies du Level current
 func _on_noma_hit(dmg) -> void:
 	nomalife = max(nomalife - dmg, 0)
 	actual_vie_panel.size.x = (float(nomalife)/100 * 146.00)
