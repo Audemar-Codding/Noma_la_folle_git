@@ -28,7 +28,7 @@ var is_praying: bool = false
 var is_on_dialog: bool = false
 var invulnerability: bool = false
 var hit: bool = false
-var is_dropping: bool = false
+@export var is_dropping: bool = false
 
 var ability = {
 	"pray": false,

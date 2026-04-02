@@ -14,7 +14,7 @@ extends Node2D
 
 # Variables
 var current_score: int = 0
-var level: int = 1
+var level: int = 4
 var level_modif: int = 1
 var levelOneWay: bool = false
 var current_level_root: Node = null
@@ -37,7 +37,7 @@ func _load_level(level_number:int, first_level = false) -> void:
 	
 	# Change Level
 	var level_path = "res://Assets/Scenes/level%s.tscn" % level_number
-q	current_level_root = load(level_path).instantiate()
+	current_level_root = load(level_path).instantiate()
 	add_child(current_level_root)
 	current_level_root.name = "LevelRoot"
 	_setup_level(current_level_root)
