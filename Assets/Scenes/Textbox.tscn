@@ -602,14 +602,15 @@ cache/0/32/0/scale = 1.0
 script = SubResource("GDScript_a2h2o")
 
 [node name="TextboxContainer" type="MarginContainer" parent="." unique_id=2001878746]
-anchors_preset = 12
+anchors_preset = 7
+anchor_left = 0.5
 anchor_top = 1.0
-anchor_right = 1.0
+anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = 295.0
-offset_top = -148.0
-offset_right = -235.0
-offset_bottom = -48.0
+offset_left = -324.0
+offset_top = -169.0
+offset_right = 348.0
+offset_bottom = -69.0
 grow_horizontal = 2
 grow_vertical = 0
 

@@ -348,8 +348,7 @@ position = Vector2(-25, 11)
 [node name="Enemies" type="Node2D" parent="." unique_id=1657907342]
 
 [node name="Enemie" parent="Enemies" unique_id=78358566 instance=ExtResource("8_0da30")]
-position = Vector2(124, 628)
-direction = 1.0
+position = Vector2(124.00001, 627)
 speed = 260.0
 
 [node name="ExitLast" parent="." unique_id=1608225644 instance=ExtResource("9_n131a")]

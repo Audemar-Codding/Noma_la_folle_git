@@ -14,7 +14,7 @@ extends Node2D
 
 # Variables
 var current_score: int = 0
-var level: int = 4
+var level: int = 3
 var level_modif: int = 1
 var levelOneWay: bool = false
 var current_level_root: Node = null

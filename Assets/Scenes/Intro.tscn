@@ -1,0 +1,61 @@
+[gd_scene format=3 uid="uid://dbcc2fgbmsqch"]
+
+[ext_resource type="Texture2D" uid="uid://l1p4yaca4iix" path="res://Assets/Sprites/Background/night-grass.jpg" id="1_bn1rp"]
+[ext_resource type="Script" uid="uid://c4ioaumc5j5sc" path="res://Assets/Scripts/intro.gd" id="1_s7nf5"]
+[ext_resource type="FontFile" uid="uid://b1usx1lu1758v" path="res://Assets/Fonts/Silkscreen-Regular.ttf" id="2_p5f0i"]
+[ext_resource type="AudioStream" uid="uid://dbbbdpc0vtlt5" path="res://Assets/Sounds/dodoom_sound_effect.mp3" id="3_f41du"]
+[ext_resource type="AudioStream" uid="uid://becdyw6jaiy3m" path="res://Assets/Sounds/cricket.mp3" id="5_vi4hm"]
+[ext_resource type="AudioStream" uid="uid://djfruqgnlpd4s" path="res://Assets/Sounds/cartoon-snoring-sound-effect.mp3" id="6_wlwpy"]
+[ext_resource type="AudioStream" uid="uid://c8ulqt7xe0ux5" path="res://Assets/Sounds/dreaming-harp-sound-effect.mp3" id="7_4fm80"]
+[ext_resource type="Texture2D" uid="uid://e1csb4j3hn6d" path="res://Assets/Sprites/Noma/noma-bed.png" id="8_4vyej"]
+
+[node name="Intro" type="Node2D" unique_id=1133661012]
+script = ExtResource("1_s7nf5")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=2087011893]
+offset_right = 1280.0
+offset_bottom = 720.0
+texture = ExtResource("1_bn1rp")
+
+[node name="Label" type="Label" parent="." unique_id=300059088]
+offset_left = 285.0
+offset_top = 280.0
+offset_right = 1026.0
+offset_bottom = 401.0
+theme_override_fonts/font = ExtResource("2_p5f0i")
+theme_override_font_sizes/font_size = 94
+text = "NOMA, 19h30"
+
+[node name="DoumAudio" type="AudioStreamPlayer" parent="." unique_id=1448037456]
+stream = ExtResource("3_f41du")
+pitch_scale = 0.7
+autoplay = true
+
+[node name="GrillionsAudio" type="AudioStreamPlayer" parent="." unique_id=966682307]
+stream = ExtResource("5_vi4hm")
+volume_db = -11.556
+
+[node name="ToonZZZAudio" type="AudioStreamPlayer" parent="." unique_id=21719027]
+stream = ExtResource("6_wlwpy")
+
+[node name="DreamAudio" type="AudioStreamPlayer" parent="." unique_id=217703858]
+stream = ExtResource("7_4fm80")
+
+[node name="Timer" type="Timer" parent="." unique_id=1336756415]
+wait_time = 4.5
+one_shot = true
+
+[node name="NomaSprite" type="Sprite2D" parent="." unique_id=411895342]
+visible = false
+position = Vector2(621, 414)
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("8_4vyej")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=2011683436]
+modulate = Color(1, 1, 1, 0)
+offset_right = 1280.0
+offset_bottom = 720.0
+color = Color(0, 0, 0, 1)
+
+[connection signal="finished" from="DoumAudio" to="." method="_on_doum_audio_finished"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

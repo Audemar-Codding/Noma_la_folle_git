@@ -4,6 +4,7 @@
 [ext_resource type="FontFile" uid="uid://cvyub25h05w0d" path="res://Assets/Fonts/MysteryQuest-Regular.ttf" id="2_fjdk5"]
 [ext_resource type="FontFile" uid="uid://cy3ru073pll71" path="res://Assets/Fonts/Silkscreen-Bold.ttf" id="3_hnoqu"]
 [ext_resource type="Texture2D" uid="uid://bufg6kacr7wdu" path="res://Assets/Sprites/Noma/portrait.png" id="4_dkalm"]
+[ext_resource type="AudioStream" uid="uid://blbfqaosmygao" path="res://Assets/Sounds/doom_slayer.mp3" id="5_fjdk5"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_158mb"]
 
@@ -19,23 +20,16 @@
 script = ExtResource("1_j1b4o")
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=1176422327]
-offset_right = 640.0
-offset_bottom = 320.0
+offset_right = 1280.0
+offset_bottom = 720.0
 color = Color(1.0039686, 0.48831058, 0, 1)
 
 [node name="ColorRect" type="ColorRect" parent="ColorRect" unique_id=840532751]
 layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -318.0
-offset_top = -158.0
-offset_right = 318.0
-offset_bottom = 158.0
-grow_horizontal = 2
-grow_vertical = 2
+offset_left = 3.0
+offset_top = 3.0
+offset_right = 1277.0
+offset_bottom = 717.0
 color = Color(0, 0, 0, 0.9843137)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=958225718]
@@ -44,15 +38,15 @@ color = Color(0, 0, 0, 0.9843137)
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -251.0
-offset_top = 1.0
-offset_right = 131.0
-offset_bottom = 244.0
+offset_left = -384.0
+offset_top = 146.0
+offset_right = 136.0
+offset_bottom = 483.0
 grow_horizontal = 2
 theme_override_colors/font_color = Color(1.004, 0.488, 0, 1)
 theme_override_constants/line_spacing = -15
 theme_override_fonts/font = ExtResource("2_fjdk5")
-theme_override_font_sizes/font_size = 75
+theme_override_font_sizes/font_size = 128
 text = "NOMA 
 LA FOLLE"
 horizontal_alignment = 1
@@ -64,17 +58,17 @@ anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = -131.0
-offset_top = -99.0
-offset_right = 1.0
-offset_bottom = -58.0
+offset_left = -248.0
+offset_top = -181.0
+offset_right = 16.0
+offset_bottom = -99.0
 grow_horizontal = 2
 grow_vertical = 0
 size_flags_vertical = 4
 theme_override_colors/font_color = Color(0.8745098, 0.8745098, 0.8745098, 0.6)
 theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
 theme_override_fonts/font = ExtResource("3_hnoqu")
-theme_override_font_sizes/font_size = 32
+theme_override_font_sizes/font_size = 64
 theme_override_styles/normal = SubResource("StyleBoxEmpty_158mb")
 theme_override_styles/pressed = SubResource("StyleBoxEmpty_wwsa2")
 theme_override_styles/hover = SubResource("StyleBoxEmpty_jsrd8")
@@ -83,8 +77,11 @@ theme_override_styles/focus = SubResource("StyleBoxEmpty_q3rjx")
 text = "START"
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1692721150]
-position = Vector2(520, 195)
-scale = Vector2(0.5, 0.5)
+position = Vector2(1014, 467)
 texture = ExtResource("4_dkalm")
+
+[node name="DoomAudio" type="AudioStreamPlayer" parent="." unique_id=773611835]
+stream = ExtResource("5_fjdk5")
+autoplay = true
 
 [connection signal="pressed" from="CanvasLayer/Button" to="." method="_on_button_pressed"]

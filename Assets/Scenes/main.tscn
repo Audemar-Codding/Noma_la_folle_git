@@ -84,6 +84,7 @@ scale = Vector2(3, 3)
 texture = ExtResource("5_nacht")
 
 [node name="ViePanel" type="Panel" parent="CanvasLayer" unique_id=1459631091]
+visible = false
 offset_left = 1093.0
 offset_top = 632.0
 offset_right = 1243.0
