@@ -1,13 +1,17 @@
 [gd_scene format=4 uid="uid://cw2ttgyp2aukn"]
 
 [ext_resource type="Texture2D" uid="uid://hokcnt44t5d0" path="res://Assets/Sprites/Background/Green.png" id="1_0dril"]
+[ext_resource type="Script" uid="uid://kshiluo2xewt" path="res://Assets/Scripts/level_12.gd" id="1_c7nna"]
 [ext_resource type="TileSet" uid="uid://djkd2jlbrmsst" path="res://Assets/TitleMap/new_tile_set2.tres" id="2_ter2g"]
 [ext_resource type="Texture2D" uid="uid://ddspfo0knwkye" path="res://Assets/Sprites/Tilemaps/Terrain (16x16).png" id="3_gvuv7"]
 [ext_resource type="PackedScene" uid="uid://ubu6jk5f5v2v" path="res://Assets/Scenes/noma.tscn" id="4_c7nna"]
 [ext_resource type="PackedScene" uid="uid://cvfg05fejs68i" path="res://Assets/Scenes/exit.tscn" id="6_i7c3a"]
 [ext_resource type="Script" uid="uid://covo1qkcgxeqv" path="res://Assets/Scripts/interact_props_dialog.gd" id="6_ter2g"]
-[ext_resource type="Texture2D" uid="uid://cskdpnnf3pg4g" path="res://Assets/Sprites/Props/cadeau.png" id="7_ter2g"]
 [ext_resource type="FontFile" uid="uid://b1usx1lu1758v" path="res://Assets/Fonts/Silkscreen-Regular.ttf" id="8_c7nna"]
+[ext_resource type="AudioStream" uid="uid://b4evcgcr0jqwu" path="res://Assets/Sounds/Gift.mp3" id="9_gvuv7"]
+[ext_resource type="Texture2D" uid="uid://bqiw4ed4ydjoj" path="res://Assets/Sprites/Props/Cadeau/cadeau1.png" id="9_i7c3a"]
+[ext_resource type="Texture2D" uid="uid://6tyv7aiqsg0j" path="res://Assets/Sprites/Props/Cadeau/cadeau2.png" id="10_hj6wr"]
+[ext_resource type="AudioStream" uid="uid://6kykhws5f5h5" path="res://Assets/Sounds/birthdaymusic.mp3" id="11_3hd8j"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_uoyjf"]
 texture = ExtResource("3_gvuv7")
@@ -297,7 +301,30 @@ sources/0 = SubResource("TileSetAtlasSource_if0tp")
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3hd8j"]
 size = Vector2(173, 164)
 
+[sub_resource type="SpriteFrames" id="SpriteFrames_j1hr0"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("9_i7c3a")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_hj6wr")
+}],
+"loop": false,
+"name": &"gift",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("9_i7c3a")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}]
+
 [node name="LevelRoot" type="Node2D" unique_id=1201006017]
+script = ExtResource("1_c7nna")
 
 [node name="TextureRect" type="TextureRect" parent="." unique_id=1551453282]
 custom_minimum_size = Vector2(1280, 720)
@@ -346,13 +373,8 @@ down = true
 [node name="DialogProps" type="Area2D" parent="DialogInteract" unique_id=710169576]
 position = Vector2(12, 337)
 script = ExtResource("6_ter2g")
-label_dialogs = Array[String](["J'ai beaucoup d'idées mais peu de temps.", "Je ne peu pas ajouter le mode massacre ou Noma porte un casque.", "Je ne peut pas tous nous faire en boss.", "Et je ne peut pas faire une joli fin.", "Donc voila la fin du pauvre."])
+label_dialogs = Array[String](["J'ai beaucoup d'idées mais peu de temps.", "Je ne peut pas ajouter le mode massacre ou Noma porte un casque.", "Je ne peut pas tous nous faire en boss.", "Et je ne peut pas faire une joli fin.", "Donc voila la fin du pauvre.", "(On est dans la tête de noma 😭)"])
 metadata/_edit_group_ = true
-
-[node name="Sprite2D" type="Sprite2D" parent="DialogInteract/DialogProps" unique_id=2205003]
-position = Vector2(629.00006, 256)
-scale = Vector2(5, 5)
-texture = ExtResource("7_ter2g")
 
 [node name="Label" type="Label" parent="DialogInteract/DialogProps" unique_id=423879884]
 visible = false
@@ -368,5 +390,23 @@ text = "E"
 position = Vector2(630, 254)
 shape = SubResource("RectangleShape2D_3hd8j")
 
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="DialogInteract/DialogProps" unique_id=398493017]
+position = Vector2(629, 209)
+scale = Vector2(5, 5)
+sprite_frames = SubResource("SpriteFrames_j1hr0")
+animation = &"gift"
+
+[node name="Audio" type="Node2D" parent="." unique_id=1646490877]
+
+[node name="AniverssaireAudio" type="AudioStreamPlayer" parent="Audio" unique_id=2050795570]
+stream = ExtResource("9_gvuv7")
+
+[node name="MusicAudio" type="AudioStreamPlayer" parent="Audio" unique_id=1453326622]
+stream = ExtResource("11_3hd8j")
+volume_db = -16.049
+pitch_scale = 1.3
+parameters/looping = true
+
 [connection signal="body_entered" from="DialogInteract/DialogProps" to="DialogInteract/DialogProps" method="_on_body_entered"]
 [connection signal="body_exited" from="DialogInteract/DialogProps" to="DialogInteract/DialogProps" method="_on_body_exited"]
+[connection signal="finished" from="Audio/AniverssaireAudio" to="." method="_on_aniverssaire_audio_finished"]

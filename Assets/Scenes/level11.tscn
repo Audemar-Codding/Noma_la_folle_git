@@ -4,6 +4,7 @@
 [ext_resource type="TileSet" uid="uid://djkd2jlbrmsst" path="res://Assets/TitleMap/new_tile_set2.tres" id="2_qavkx"]
 [ext_resource type="Texture2D" uid="uid://ddspfo0knwkye" path="res://Assets/Sprites/Tilemaps/Terrain (16x16).png" id="3_5jksd"]
 [ext_resource type="PackedScene" uid="uid://ubu6jk5f5v2v" path="res://Assets/Scenes/noma.tscn" id="4_snrls"]
+[ext_resource type="PackedScene" uid="uid://cxaw268khvbmr" path="res://Assets/Scenes/artefact.tscn" id="5_vybc0"]
 [ext_resource type="PackedScene" uid="uid://d1mhfajs4jd8l" path="res://Assets/Scenes/mishak01.tscn" id="6_r3swj"]
 [ext_resource type="PackedScene" uid="uid://cvfg05fejs68i" path="res://Assets/Scenes/exit.tscn" id="7_qg7im"]
 [ext_resource type="PackedScene" uid="uid://uj4scvnn3yv7" path="res://Assets/Scenes/sparadra_bumper.tscn" id="8_slast"]
@@ -326,15 +327,42 @@ is_dropping = true
 
 [node name="Artefacts" type="Node2D" parent="." unique_id=962725578]
 
+[node name="Artefact" parent="Artefacts" unique_id=859195004 instance=ExtResource("5_vybc0")]
+position = Vector2(456, 615)
+
+[node name="Artefact2" parent="Artefacts" unique_id=297817655 instance=ExtResource("5_vybc0")]
+position = Vector2(562, 626)
+
+[node name="Artefact3" parent="Artefacts" unique_id=1139827402 instance=ExtResource("5_vybc0")]
+position = Vector2(651, 592)
+
+[node name="Artefact4" parent="Artefacts" unique_id=1887218267 instance=ExtResource("5_vybc0")]
+position = Vector2(551, 525)
+
+[node name="Artefact5" parent="Artefacts" unique_id=333174589 instance=ExtResource("5_vybc0")]
+position = Vector2(450, 507)
+
+[node name="Artefact6" parent="Artefacts" unique_id=1622236818 instance=ExtResource("5_vybc0")]
+position = Vector2(640, 494)
+
 [node name="DialogAreas" type="Node2D" parent="." unique_id=1185096002]
 position = Vector2(-25, 11)
+
+[node name="Label" type="Label" parent="." unique_id=2141932569]
+offset_left = 466.0
+offset_top = 31.0
+offset_right = 828.0
+offset_bottom = 292.0
+theme_override_font_sizes/font_size = 94
+text = "===>
+100dmg"
 
 [node name="Enemies" type="Node2D" parent="." unique_id=1657907342]
 
 [node name="Enemie2" parent="Enemies" unique_id=466961289 instance=ExtResource("6_r3swj")]
-position = Vector2(1097, 421.99997)
+position = Vector2(948, 422)
 scale = Vector2(25, 25)
-dmg = 99.0
+dmg = 50.0
 speed = 100.0
 
 [node name="ExitLast" parent="." unique_id=1608225644 instance=ExtResource("7_qg7im")]
@@ -366,11 +394,3 @@ position = Vector2(578, -188)
 
 [node name="SparadraBumper4" parent="EnvironementEffects/SparadraBumper4" unique_id=478813446 instance=ExtResource("8_slast")]
 position = Vector2(581, -8)
-
-[node name="Label" type="Label" parent="." unique_id=2141932569]
-offset_left = 499.0
-offset_top = 337.0
-offset_right = 714.0
-offset_bottom = 466.0
-theme_override_font_sizes/font_size = 94
-text = "===>"

@@ -21,7 +21,9 @@ func _ready() -> void:
 	animated_sprite_2d.sprite_frames.set_animation_speed("moving", (speed/225.0 * 10.0))
 	if direction == -1.0:
 		animated_sprite_2d.flip_h = true
-		flip_enemie()
+		ledge_ray.position.x *= -1 
+		wall_ray.position.x *= -1
+		wall_ray.rotation = (20.0+(180.0*direction))
 
 func _on_area_2d_body_entered(body: Node2D) -> void:
 	if body.name == "Noma":

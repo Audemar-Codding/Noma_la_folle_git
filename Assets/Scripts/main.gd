@@ -16,7 +16,7 @@ extends Node2D
 
 # Variables
 var current_score: int = 0
-var level: int = 12
+var level: int = 11
 var level_modif: int = 1
 var levelOneWay: bool = false
 var current_level_root: Node = null
@@ -162,6 +162,7 @@ func _on_noma_hit(dmg) -> void:
 	
 	if nomalife <= 0:
 		print("dead")
+		get_tree().reload_current_scene()
 
 func _on_noma_heal(heal) -> void:
 	if nomalife <= 100:
