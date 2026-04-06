@@ -362,7 +362,7 @@ text = "===>
 [node name="Enemie2" parent="Enemies" unique_id=466961289 instance=ExtResource("6_r3swj")]
 position = Vector2(948, 422)
 scale = Vector2(25, 25)
-dmg = 50.0
+dmg = 100.0
 speed = 100.0
 
 [node name="ExitLast" parent="." unique_id=1608225644 instance=ExtResource("7_qg7im")]

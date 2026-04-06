@@ -5,6 +5,7 @@ var base_music: AudioStreamPlayer
 @onready var aniverssaire_audio: AudioStreamPlayer = $Audio/AniverssaireAudio
 @onready var music_audio: AudioStreamPlayer = $Audio/MusicAudio
 @onready var animated_sprite_2d: AnimatedSprite2D = $DialogInteract/DialogProps/AnimatedSprite2D
+@onready var party: Node2D = $Party
 
 func _ready() -> void:
 	main = get_node("/root/Main")
@@ -20,3 +21,4 @@ func _start_party() -> void:
 
 func _on_aniverssaire_audio_finished() -> void:
 	music_audio.play()
+	party.visible = true

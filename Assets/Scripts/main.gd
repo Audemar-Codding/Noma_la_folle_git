@@ -162,6 +162,7 @@ func _on_noma_hit(dmg) -> void:
 	
 	if nomalife <= 0:
 		print("dead")
+		Engine.time_scale = 1.0
 		get_tree().reload_current_scene()
 
 func _on_noma_heal(heal) -> void:

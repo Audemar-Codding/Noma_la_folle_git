@@ -12,6 +12,32 @@
 [ext_resource type="Texture2D" uid="uid://bqiw4ed4ydjoj" path="res://Assets/Sprites/Props/Cadeau/cadeau1.png" id="9_i7c3a"]
 [ext_resource type="Texture2D" uid="uid://6tyv7aiqsg0j" path="res://Assets/Sprites/Props/Cadeau/cadeau2.png" id="10_hj6wr"]
 [ext_resource type="AudioStream" uid="uid://6kykhws5f5h5" path="res://Assets/Sounds/birthdaymusic.mp3" id="11_3hd8j"]
+[ext_resource type="Texture2D" uid="uid://cnr1gh3i6k4bs" path="res://Assets/Sprites/Noma/Noma-craft/Noma+Anims 32x32.png" id="13_4800t"]
+[ext_resource type="Texture2D" uid="uid://cu4cw0m6xy5gn" path="res://Assets/Sprites/Noma/Noma-craft/Noma+Anims 32x33.png" id="14_pawgx"]
+[ext_resource type="Texture2D" uid="uid://dvplpdbhhsx6s" path="res://Assets/Sprites/Noma/Noma-craft/Noma+Anims 32x34.png" id="15_sfl36"]
+[ext_resource type="Texture2D" uid="uid://ba3r3ulfscp6r" path="res://Assets/Sprites/Noma/Noma-craft/Noma+Anims 32x35.png" id="16_f8get"]
+[ext_resource type="Texture2D" uid="uid://dxahysyvcutvh" path="res://Assets/Sprites/Noma/Noma-craft/Noma+Anims 32x36.png" id="17_pep57"]
+[ext_resource type="Texture2D" uid="uid://b4etdfivexhkx" path="res://Assets/Sprites/Noma/Noma-craft/Noma+Anims 32x37.png" id="18_8pa8q"]
+[ext_resource type="Texture2D" uid="uid://p3ai8v4ujwgt" path="res://Assets/Sprites/Noma/Noma-craft/Noma+Anims 32x38.png" id="19_mdukk"]
+[ext_resource type="Texture2D" uid="uid://buujxs7ehjx8f" path="res://Assets/Sprites/Noma/Noma-craft/Noma+Anims 32x39.png" id="20_o7xhj"]
+[ext_resource type="Texture2D" uid="uid://ddi4ox25fpbem" path="res://Assets/Sprites/Noma/Noma-craft/Noma+Anims 32x40.png" id="21_1by84"]
+[ext_resource type="Texture2D" uid="uid://du5wv63ycx7jb" path="res://Assets/Sprites/Noma/Noma-craft/Noma+Anims 32x41.png" id="22_ew6ic"]
+[ext_resource type="Texture2D" uid="uid://r7tmntdq6e4s" path="res://Assets/Sprites/Noma/Noma-craft/Noma+Anims 32x42.png" id="23_qhvaa"]
+[ext_resource type="Texture2D" uid="uid://cqppntqvkw01d" path="res://Assets/Sprites/Noma/Noma-craft/Noma+Anims 32x43.png" id="24_pjuog"]
+[ext_resource type="Texture2D" uid="uid://dnurosnx6i3b8" path="res://Assets/Sprites/Noma/Noma-craft/Noma+Anims 32x44.png" id="25_o3bcg"]
+[ext_resource type="Texture2D" uid="uid://bplxsx576sdqs" path="res://Assets/Sprites/Noma/Noma-craft/Noma+Anims 32x45.png" id="26_nqs8j"]
+[ext_resource type="Texture2D" uid="uid://d2f52fy16gjxi" path="res://Assets/Sprites/Noma/Noma-craft/Noma+Anims 32x46.png" id="27_qskli"]
+[ext_resource type="Texture2D" uid="uid://moevjj5lw0v6" path="res://Assets/Sprites/Noma/Noma-craft/Noma+Anims 32x47.png" id="28_i1t75"]
+[ext_resource type="Texture2D" uid="uid://bfn4b8mqgalx4" path="res://Assets/Sprites/Enemies/Mishak01/Mish-Idle/running Animation 32x32 (16x16)1.png" id="29_klkqs"]
+[ext_resource type="Texture2D" uid="uid://bs0f0g8e3pk3o" path="res://Assets/Sprites/Enemies/Mishak01/Mish-Idle/running Animation 32x32 (16x16)2.png" id="30_85f8m"]
+[ext_resource type="Texture2D" uid="uid://dhxcauyke0kn" path="res://Assets/Sprites/Enemies/Mishak01/Mish-Idle/running Animation 32x32 (16x16)3.png" id="31_748ff"]
+[ext_resource type="Texture2D" uid="uid://x3rpxlnqo3mi" path="res://Assets/Sprites/Enemies/Mishak01/Mish-Idle/running Animation 32x32 (16x16)4.png" id="32_fuet1"]
+[ext_resource type="Texture2D" uid="uid://dv471etq4q7mu" path="res://Assets/Sprites/Enemies/Mishak01/Mish-Idle/running Animation 32x32 (16x16)5.png" id="33_qpprh"]
+[ext_resource type="Texture2D" uid="uid://dhpjbngmq6nki" path="res://Assets/Sprites/Enemies/Mishak01/Mish-Idle/running Animation 32x32 (16x16)6.png" id="34_wjnlt"]
+[ext_resource type="Texture2D" uid="uid://c0q6sckxs75sa" path="res://Assets/Sprites/Enemies/Mishak01/Mish-Idle/running Animation 32x32 (16x16)7.png" id="35_k3e57"]
+[ext_resource type="Texture2D" uid="uid://0otg7v62f6wg" path="res://Assets/Sprites/Enemies/Mishak01/Mish-Idle/running Animation 32x32 (16x16)8.png" id="36_fodul"]
+[ext_resource type="Texture2D" uid="uid://cx4odiplkq82g" path="res://Assets/Sprites/Enemies/Mishak01/Mish-Idle/running Animation 32x32 (16x16)9.png" id="37_855ia"]
+[ext_resource type="FontFile" uid="uid://cvyub25h05w0d" path="res://Assets/Fonts/MysteryQuest-Regular.ttf" id="38_pawgx"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_uoyjf"]
 texture = ExtResource("3_gvuv7")
@@ -323,6 +349,97 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="SpriteFrames" id="SpriteFrames_domsb"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("13_4800t")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_pawgx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_sfl36")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_f8get")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_pep57")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_8pa8q")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_mdukk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_o7xhj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_1by84")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_ew6ic")
+}, {
+"duration": 1.0,
+"texture": ExtResource("23_qhvaa")
+}, {
+"duration": 1.0,
+"texture": ExtResource("24_pjuog")
+}, {
+"duration": 1.0,
+"texture": ExtResource("25_o3bcg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("26_nqs8j")
+}, {
+"duration": 1.0,
+"texture": ExtResource("27_qskli")
+}, {
+"duration": 1.0,
+"texture": ExtResource("28_i1t75")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_pfeml"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("29_klkqs")
+}, {
+"duration": 1.0,
+"texture": ExtResource("30_85f8m")
+}, {
+"duration": 1.0,
+"texture": ExtResource("31_748ff")
+}, {
+"duration": 1.0,
+"texture": ExtResource("32_fuet1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("33_qpprh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("34_wjnlt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("35_k3e57")
+}, {
+"duration": 1.0,
+"texture": ExtResource("36_fodul")
+}, {
+"duration": 1.0,
+"texture": ExtResource("37_855ia")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
 [node name="LevelRoot" type="Node2D" unique_id=1201006017]
 script = ExtResource("1_c7nna")
 
@@ -406,6 +523,81 @@ stream = ExtResource("11_3hd8j")
 volume_db = -16.049
 pitch_scale = 1.3
 parameters/looping = true
+
+[node name="Party" type="Node2D" parent="." unique_id=414961589]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Party" unique_id=1584216773]
+position = Vector2(1052, 622)
+scale = Vector2(5, 5)
+sprite_frames = SubResource("SpriteFrames_domsb")
+animation = &"idle"
+autoplay = "idle"
+frame_progress = 0.02136889
+
+[node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="Party" unique_id=1276111772]
+position = Vector2(418.00003, 642)
+scale = Vector2(3, 3)
+sprite_frames = SubResource("SpriteFrames_pfeml")
+autoplay = "default"
+frame_progress = 0.28521493
+
+[node name="AnimatedSprite2D3" type="AnimatedSprite2D" parent="Party" unique_id=982701444]
+position = Vector2(324, 644)
+scale = Vector2(3, 3)
+sprite_frames = SubResource("SpriteFrames_pfeml")
+autoplay = "default"
+frame_progress = 0.5435018
+
+[node name="AnimatedSprite2D4" type="AnimatedSprite2D" parent="Party" unique_id=2010154337]
+position = Vector2(227, 645)
+scale = Vector2(3, 3)
+sprite_frames = SubResource("SpriteFrames_pfeml")
+autoplay = "default"
+frame_progress = 0.5435018
+
+[node name="AnimatedSprite2D5" type="AnimatedSprite2D" parent="Party" unique_id=458978973]
+position = Vector2(506, 646)
+scale = Vector2(3, 3)
+sprite_frames = SubResource("SpriteFrames_pfeml")
+autoplay = "default"
+frame_progress = 0.5435018
+
+[node name="AnimatedSprite2D6" type="AnimatedSprite2D" parent="Party" unique_id=708335068]
+position = Vector2(801, 645)
+scale = Vector2(3, 3)
+sprite_frames = SubResource("SpriteFrames_pfeml")
+autoplay = "default"
+frame_progress = 0.5435018
+
+[node name="AnimatedSprite2D7" type="AnimatedSprite2D" parent="Party" unique_id=576990214]
+position = Vector2(864, 644)
+scale = Vector2(3, 3)
+sprite_frames = SubResource("SpriteFrames_pfeml")
+autoplay = "default"
+frame_progress = 0.5435018
+
+[node name="AnimatedSprite2D8" type="AnimatedSprite2D" parent="Party" unique_id=2033543660]
+position = Vector2(960, 645)
+scale = Vector2(3, 3)
+sprite_frames = SubResource("SpriteFrames_pfeml")
+autoplay = "default"
+frame_progress = 0.5435018
+
+[node name="AnimatedSprite2D9" type="AnimatedSprite2D" parent="Party" unique_id=1960405236]
+position = Vector2(1175, 644)
+scale = Vector2(3, 3)
+sprite_frames = SubResource("SpriteFrames_pfeml")
+autoplay = "default"
+frame_progress = 0.5435018
+
+[node name="Label" type="Label" parent="Party" unique_id=738172717]
+offset_left = 131.0
+offset_top = 257.0
+offset_right = 1233.0
+offset_bottom = 389.0
+theme_override_fonts/font = ExtResource("38_pawgx")
+theme_override_font_sizes/font_size = 96
+text = "JOYEUX ANNIVERSSAIRE"
 
 [connection signal="body_entered" from="DialogInteract/DialogProps" to="DialogInteract/DialogProps" method="_on_body_entered"]
 [connection signal="body_exited" from="DialogInteract/DialogProps" to="DialogInteract/DialogProps" method="_on_body_exited"]
