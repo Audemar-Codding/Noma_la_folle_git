@@ -1,0 +1,76 @@
+[gd_scene format=3 uid="uid://2xirhiga428n"]
+
+[ext_resource type="FontFile" uid="uid://b1usx1lu1758v" path="res://Assets/Fonts/Silkscreen-Regular.ttf" id="1_3bbul"]
+[ext_resource type="Script" uid="uid://cnxktbakx41d8" path="res://Assets/Scripts/trade_number.gd" id="1_4t7v0"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4t7v0"]
+size = Vector2(83.5, 48)
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_4t7v0"]
+viewport_path = NodePath("SubViewport")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_4t7v0"]
+particle_flag_disable_z = true
+emission_shape = 1
+emission_sphere_radius = 35.62
+angle_min = 1.0728835e-05
+angle_max = 1.0728835e-05
+direction = Vector3(0, -1, 0)
+initial_velocity_min = 45.94
+initial_velocity_max = 77.74
+gravity = Vector3(0, 98, 0)
+
+[node name="TradeNumber" type="RigidBody2D" unique_id=448670846]
+gravity_scale = 0.25
+contact_monitor = true
+max_contacts_reported = 5
+script = ExtResource("1_4t7v0")
+
+[node name="Label" type="Label" parent="." unique_id=1932961173]
+offset_right = 88.0
+offset_bottom = 82.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("1_3bbul")
+theme_override_font_sizes/font_size = 64
+text = "55"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=351054988]
+position = Vector2(48.25, 46)
+shape = SubResource("RectangleShape2D_4t7v0")
+
+[node name="Timer" type="Timer" parent="." unique_id=1986527811]
+wait_time = 0.5
+one_shot = true
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="." unique_id=1028874864]
+position = Vector2(80, 45)
+emitting = false
+amount = 3
+texture = SubResource("ViewportTexture_4t7v0")
+speed_scale = 4.0
+trail_lifetime = 3.05
+process_material = SubResource("ParticleProcessMaterial_4t7v0")
+
+[node name="SubViewport" type="SubViewport" parent="." unique_id=470231318]
+transparent_bg = true
+size = Vector2i(128, 128)
+
+[node name="ParticleLabel" type="Label" parent="SubViewport" unique_id=403227790]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -64.0
+offset_top = -64.0
+offset_right = 64.0
+offset_bottom = 64.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+theme_override_fonts/font = ExtResource("1_3bbul")
+theme_override_font_sizes/font_size = 32
+text = "55"
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

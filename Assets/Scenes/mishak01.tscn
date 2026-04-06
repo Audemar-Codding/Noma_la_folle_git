@@ -17,6 +17,7 @@
 [ext_resource type="Texture2D" uid="uid://vjad62agwowm" path="res://Assets/Sprites/Enemies/Mishak01/Mish-Running/running Animation 32x32 (16x16)4.png" id="15_1qaa8"]
 [ext_resource type="Texture2D" uid="uid://6d3yw7rd6dnb" path="res://Assets/Sprites/Enemies/Mishak01/Mish-Running/running Animation 32x32 (16x16)5.png" id="16_2mhks"]
 [ext_resource type="Texture2D" uid="uid://bonv4qftkjnd" path="res://Assets/Sprites/Enemies/Mishak01/Mish-Running/running Animation 32x32 (16x16)6.png" id="17_yiacc"]
+[ext_resource type="AudioStream" uid="uid://cllkkf0vf4e5y" path="res://Assets/Sounds/Love_voice.mp3" id="18_rhetu"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_nycx6"]
 size = Vector2(10.8, 16.600002)
@@ -93,6 +94,8 @@ script = ExtResource("1_2c6yn")
 
 [node name="Area2D" type="Area2D" parent="." unique_id=1289595421]
 scale = Vector2(0.99999994, 0.99999994)
+collision_layer = 7
+collision_mask = 7
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=476994634]
 position = Vector2(-0.4000001, 0.90000045)
@@ -102,17 +105,23 @@ shape = SubResource("RectangleShape2D_nycx6")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1150839819]
 scale = Vector2(0.99999994, 0.99999994)
 sprite_frames = SubResource("SpriteFrames_5l0yl")
-animation = &"moving"
+animation = &"idle"
 autoplay = "moving"
 
 [node name="LedgeRay" type="RayCast2D" parent="." unique_id=1648475838]
 position = Vector2(8.199999, 6.2)
 target_position = Vector2(0, 11.4)
+collision_mask = 7
 
 [node name="WallRay" type="RayCast2D" parent="." unique_id=153075017]
 position = Vector2(2.8, 1.1920929e-07)
-rotation = -0.34528542
+rotation = -0.34906584
 target_position = Vector2(7.736604, 2.7175264)
 collision_mask = 4
+
+[node name="LoveAudio" type="AudioStreamPlayer" parent="." unique_id=525206606]
+stream = ExtResource("18_rhetu")
+volume_db = -2.13
+pitch_scale = 0.57
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

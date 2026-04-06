@@ -1,0 +1,25 @@
+[gd_scene format=3 uid="uid://uj4scvnn3yv7"]
+
+[ext_resource type="Script" uid="uid://d3qqh4r58i4a1" path="res://Assets/Scripts/sparadra_bumper.gd" id="1_2jd6q"]
+[ext_resource type="Texture2D" uid="uid://bb7uur7gas3as" path="res://Assets/Sprites/Props/sparadra_bumper.png" id="1_7x2xw"]
+[ext_resource type="AudioStream" uid="uid://b0mtaubakfppr" path="res://Assets/Sounds/Catgirl Fighting SFX/jump/006_jump.wav" id="2_arbmh"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2jd6q"]
+size = Vector2(96, 27)
+
+[node name="SparadraBumper" type="Area2D" unique_id=1330572621]
+script = ExtResource("1_2jd6q")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=304011084]
+scale = Vector2(3, 3)
+texture = ExtResource("1_7x2xw")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=499119994]
+position = Vector2(0, 4.5)
+shape = SubResource("RectangleShape2D_2jd6q")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=551200158]
+stream = ExtResource("2_arbmh")
+
+[connection signal="area_shape_entered" from="." to="." method="_on_area_shape_entered"]
+[connection signal="area_shape_exited" from="." to="." method="_on_area_shape_exited"]

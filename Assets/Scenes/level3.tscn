@@ -350,6 +350,7 @@ position = Vector2(-25, 11)
 [node name="StartDialogArea" parent="DialogAreas" unique_id=426438481 instance=ExtResource("8_trc6p")]
 position = Vector2(116, 557)
 label_dialogs = Array[String](["Bonjour !", "Pourquoi tu a l'air triste ?", "Hein ? attend reviens !"])
+anim = "talking"
 
 [node name="Enemies" type="Node2D" parent="." unique_id=1657907342]
 

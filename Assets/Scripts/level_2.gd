@@ -16,4 +16,4 @@ func _on_dialog_finished() -> void:
 		hint_pray.visible = true
 		first_read = false
 		main.get_node("LevelRoot/Noma").ability.pray = true
-		main.get_node("LevelRoot/Noma/Audios/DivineVoices").stop()
+	main.get_node("LevelRoot/Noma/Audios/DivineVoices").stop()

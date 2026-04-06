@@ -17,12 +17,16 @@
 [ext_resource type="Texture2D" uid="uid://bplxsx576sdqs" path="res://Assets/Sprites/Noma/Noma-craft/Noma+Anims 32x45.png" id="15_ia7ci"]
 [ext_resource type="Texture2D" uid="uid://d2f52fy16gjxi" path="res://Assets/Sprites/Noma/Noma-craft/Noma+Anims 32x46.png" id="16_gfli4"]
 [ext_resource type="Texture2D" uid="uid://moevjj5lw0v6" path="res://Assets/Sprites/Noma/Noma-craft/Noma+Anims 32x47.png" id="17_y6ii5"]
+[ext_resource type="Texture2D" uid="uid://dk75j780n5j8x" path="res://Assets/Sprites/Noma/Noma-flash/Noma+Anims 32x32.png" id="18_3kwq3"]
 [ext_resource type="Texture2D" uid="uid://ci8xfxhnrgw73" path="res://Assets/Sprites/Noma/Noma-idle/Noma+Anims 32x32.png" id="18_dt4uy"]
 [ext_resource type="Texture2D" uid="uid://bh8sjhsqc1mr5" path="res://Assets/Sprites/Noma/Noma-hit/Noma+Anims 32x32.png" id="18_pfv56"]
 [ext_resource type="Texture2D" uid="uid://cn4x6hf63nnrb" path="res://Assets/Sprites/Noma/Noma-idle/Noma+Anims 32x33.png" id="19_7pemw"]
+[ext_resource type="Texture2D" uid="uid://cix7gq7uijd6d" path="res://Assets/Sprites/Noma/Noma-flash/Noma+Anims 32x33.png" id="19_8sqqc"]
 [ext_resource type="Texture2D" uid="uid://tb5tl8rm8ccp" path="res://Assets/Sprites/Noma/Noma-hit/Noma+Anims 32x32(1).png" id="19_pfv56"]
+[ext_resource type="Texture2D" uid="uid://bee8i6pbbeo4w" path="res://Assets/Sprites/Noma/Noma-flash/Noma+Anims 32x34.png" id="20_7ml6q"]
 [ext_resource type="Texture2D" uid="uid://y5miv353it4k" path="res://Assets/Sprites/Noma/Noma-idle/Noma+Anims 32x34.png" id="20_qdcdn"]
 [ext_resource type="Texture2D" uid="uid://d0a3egujv1ydx" path="res://Assets/Sprites/Noma/Noma-idle/Noma+Anims 32x35.png" id="21_b3syj"]
+[ext_resource type="Texture2D" uid="uid://dw8xfg512c26j" path="res://Assets/Sprites/Noma/Noma-flash/Noma+Anims 32x35.png" id="21_gp7wn"]
 [ext_resource type="Texture2D" uid="uid://x088gqhjc4b2" path="res://Assets/Sprites/Noma/Noma-idle/Noma+Anims 32x36.png" id="22_ieutd"]
 [ext_resource type="Texture2D" uid="uid://bge8ur6od3p4w" path="res://Assets/Sprites/Noma/Noma-idle/Noma+Anims 32x37.png" id="23_ld7t5"]
 [ext_resource type="Texture2D" uid="uid://cs7mgxo3r8sy6" path="res://Assets/Sprites/Noma/Noma-idle/Noma+Anims 32x38.png" id="24_5cq3i"]
@@ -46,6 +50,7 @@
 [ext_resource type="Texture2D" uid="uid://c7wyue142benl" path="res://Assets/Sprites/Noma/Noma-talk/Noma+Anims 32x32.png" id="42_02qry"]
 [ext_resource type="Texture2D" uid="uid://b0mrq5us7nu0n" path="res://Assets/Sprites/Noma/Noma-talk/Noma+Anims 32x33.png" id="43_ws5on"]
 [ext_resource type="Texture2D" uid="uid://bsp6uiuxg4p7m" path="res://Assets/Sprites/Noma/Noma-talk/Noma+Anims 32x34.png" id="44_4n4la"]
+[ext_resource type="AudioStream" uid="uid://ocm1np7b46vk" path="res://Assets/Sounds/flash8bit.mp3" id="51_8sqqc"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_k8jln"]
 size = Vector2(12.333334, 17.333334)
@@ -103,6 +108,26 @@ animations = [{
 }],
 "loop": false,
 "name": &"crafting",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("18_3kwq3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_8sqqc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_7ml6q")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_gp7wn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_3kwq3")
+}],
+"loop": false,
+"name": &"flash",
 "speed": 10.0
 }, {
 "frames": [{
@@ -252,8 +277,10 @@ shape = SubResource("RectangleShape2D_k8jln")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=919436634]
 texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_a61pt")
-animation = &"running"
+animation = &"flash"
 autoplay = "idle"
+frame = 4
+frame_progress = 1.0
 
 [node name="FeetsArea2D" type="Area2D" parent="." unique_id=342898329]
 
@@ -269,6 +296,11 @@ volume_db = -25.0
 
 [node name="JumpAudio" type="AudioStreamPlayer" parent="Audios" unique_id=1733800209]
 stream = SubResource("AudioStreamWAV_k8jln")
+
+[node name="FlashAudio" type="AudioStreamPlayer" parent="Audios" unique_id=436524068]
+stream = ExtResource("51_8sqqc")
+volume_db = -12.421
+pitch_scale = 0.46
 
 [node name="Timer" type="Node2D" parent="." unique_id=1435242983]
 

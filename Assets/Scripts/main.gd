@@ -10,11 +10,13 @@ extends Node2D
 @onready var hit_audio: AudioStreamPlayer = $Audio/Sounds/HitAudio
 @onready var voice_hit_audio: AudioStreamPlayer = $Audio/Sounds/VoiceHitAudio
 
+@onready var base_music: AudioStreamPlayer = $Audio/Music/BaseAudio
+
 # Timers
 
 # Variables
 var current_score: int = 0
-var level: int = 3
+var level: int = 12
 var level_modif: int = 1
 var levelOneWay: bool = false
 var current_level_root: Node = null
@@ -26,6 +28,7 @@ func _ready() -> void:
 	current_level_root = get_node("LevelRoot")
 	textbox.dialog_finished.connect(_on_finished_dialog)
 	_load_level(level, true)
+	base_music.play()
 
 # ------------------
 # LEVEL MANAGEMENT
@@ -68,7 +71,7 @@ func _load_level(level_number:int, first_level = false) -> void:
 			
 			if levelOneWay:
 				way.call_deferred("remove_exit")
-
+	
 func _setup_level(level_root: Node) -> void:
 	noma = current_level_root.get_node("Noma")
 	
@@ -98,11 +101,17 @@ func _setup_level(level_root: Node) -> void:
 		for dialog_area in dialog_areas.get_children():
 			dialog_area.start_dialog.connect(_on_start_dialog)
 	
+	# Connect Divine powers ups
+	var divine_powers_ups = level_root.get_node_or_null("DivinePowersUps")
+	if divine_powers_ups:
+		for divine_power_up in divine_powers_ups.get_children():
+			divine_power_up.start_dialog.connect(_on_start_dialog)
+	
 	# Connect Collectable Artefacts
 	var artefacts = level_root.get_node_or_null("Artefacts")
 	if artefacts:
 		for artefact in artefacts.get_children():
-			artefact.artefact_collected.connect(increase_score)
+			artefact.artefact_collected.connect(edit_score.bind(1))
 	
 	# Connect Enemies
 	var enemies = level_root.get_node_or_null("Enemies")
@@ -136,8 +145,8 @@ func _on_exit_body_entered(body: Node2D, dir: int) -> void:
 		call_deferred("_load_level",level)
 
 # ====== SCORE HANDLER
-func increase_score() -> void:
-	current_score += 1
+func edit_score(value) -> void:
+	current_score += value
 	score.text = "%s" % current_score
 
 # ====== Damage gestion

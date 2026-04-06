@@ -6,6 +6,7 @@ extends CharacterBody2D
 # Audio
 @onready var jump_audio: AudioStreamPlayer = $Audios/JumpAudio
 @onready var divine_voices: AudioStreamPlayer = $Audios/DivineVoices
+@onready var flash_audio: AudioStreamPlayer = $Audios/FlashAudio
 
 # Timer
 @onready var coyote_timer: Timer = $Timer/CoyoteTimer
@@ -13,8 +14,8 @@ extends CharacterBody2D
 @onready var invulnerability_timer: Timer = $Timer/InvulnerabilityTimer
 
 
-const SPEED: float = 450.0
-const JUMP_VELOCITY: float = -850.0
+var SPEED: float = 450.0
+var JUMP_VELOCITY: float = -850.0
 const PLATFORM_MASK = 2
 
 var idle_anim: String = "idle"
@@ -24,15 +25,18 @@ var can_jump: bool = false
 @export var can_move: bool = true
 var was_on_floor: bool = false
 var feet_on_platform: bool = false
+var trigger_jump: bool = false
 var is_praying: bool = false
+var is_flashing: bool = false
 var is_on_dialog: bool = false
 var invulnerability: bool = false
 var hit: bool = false
 @export var is_dropping: bool = false
+var kawai_sound: bool = false
 
 var ability = {
-	"pray": false,
-	"attack": false
+	"pray": true,
+	"flash": true
 }
 
 signal landed
@@ -59,6 +63,14 @@ func _physics_process(delta: float) -> void:
 			
 			if !hit:
 				can_move = true
+
+	if ability["flash"] and !is_on_dialog and !is_dropping:
+		if Input.is_action_just_pressed("flash") and is_flashing == false and is_on_floor():
+			flash_audio.play()
+			invulnerability = true
+			is_flashing = true
+			can_move = false
+			idle_anim = "flash"
 
 	# Add animation
 	if (velocity.x > 1 or velocity.x < -1) and can_move:
@@ -94,11 +106,12 @@ func _physics_process(delta: float) -> void:
 
 	if can_move:
 		# Handle jump.
-		if Input.is_action_just_pressed("jump") and can_jump:
+		if (Input.is_action_just_pressed("jump") or trigger_jump) and can_jump:
 			velocity.y = JUMP_VELOCITY
 			jump_audio.play()
 			can_jump = false
 			feet_on_platform = false
+			trigger_jump = false
 
 		# Get the input direction and handle the movement/deceleration.
 		var direction := Input.get_axis("left", "right")
@@ -137,8 +150,16 @@ func _on_anim_finished():
 		divine_voices.play()
 		if !is_on_dialog:
 			heal_timer.start()
+	if idle_anim == "flash":
+		idle_anim = "idle"
+		flash_audio.stop()
+		invulnerability = false
+		can_move = true
+		is_flashing = false
+		call_deferred("reset_collision")
 	if hit:
 		hit = false
+		is_flashing = false
 		can_move = true
 		invul_count = 0
 		Engine.time_scale = 1.0

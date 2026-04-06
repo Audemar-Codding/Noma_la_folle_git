@@ -30,20 +30,27 @@ Done - Changer en RigidBody 2d et mettre une anim de fall quand not on ground et
 Done - Trouver un moyen de keep l'animation de pray jusqua ce que lacher bouton
 Done - Pray heal
 
-
 01/04
 Done - Add Enemies en pixelart
 Done - Add hit anim et code (dans main quand hit)
-- Camera shake quand hit
-- Gerer le one way exit
+Done - Gerer le one way exit
 
-(6) - Elements de decords fun like bumper
+Done (6) - Elements de decords fun like bumper :)
 
-- On croise maximilien qui negocie tres mal avec un marchands
+Done - On croise maximilien qui negocie tres mal avec un marchands
 
 - Dans la salle statue tu aura les artéfacts en bas
 
-- A un moment tu peut echnager tes artéfact contre la voix kawai de saut et plein d'aute truc de base
+- A un moment tu peut echanger tes artéfacts contre la voix kawai de saut et plein d'autre truc de base
 
-Le level 3 c'est le monde des bisounours et t'a une musique kawaï, dialog poisson puis attaque de poisson
-quand poisson content tu met voice cute et un "ouaiii" d'enfant
+
+Done - Une fois le boss vaincu tu parle au marchand et il te dit merci mais je croit qu'il a rendu fou tout les autres !
+- La statue encore qui te donne le flash pour mettre en love les mishak
+- Tu peut acheter des trucs avec les artéfacts (flash + boost de speed + upgrade heal)
+
+- Level 8-9-10 en mode bois avec les bumpers
+
+
+- Le the end quand tu meurt c'est toi qui tue tout le monde
+- La win c'est une mega tuff avec plein de mishak love
+- Boum boum sur le gros, et une fléche

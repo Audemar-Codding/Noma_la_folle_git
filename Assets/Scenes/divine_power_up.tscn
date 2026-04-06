@@ -1,0 +1,73 @@
+[gd_scene format=3 uid="uid://bgt8ibo3qijwg"]
+
+[ext_resource type="Script" uid="uid://cvu5eikkdqge3" path="res://Assets/Scripts/divine_power_up.gd" id="1_1mnim"]
+[ext_resource type="Texture2D" uid="uid://b7f461lga5tfh" path="res://Assets/Sprites/Props/Divine_power_up/divine_power_up1.png" id="1_rfa6b"]
+[ext_resource type="Texture2D" uid="uid://dyxs6soydwn7t" path="res://Assets/Sprites/Props/Divine_power_up/divine_power_up2.png" id="2_1mnim"]
+[ext_resource type="Texture2D" uid="uid://bfeumdx14mwuc" path="res://Assets/Sprites/Props/Divine_power_up/divine_power_up3.png" id="3_01br3"]
+[ext_resource type="Texture2D" uid="uid://cn2n2imus5gp1" path="res://Assets/Sprites/Props/Divine_power_up/divine_power_up4.png" id="4_xrgxt"]
+[ext_resource type="FontFile" uid="uid://b1usx1lu1758v" path="res://Assets/Fonts/Silkscreen-Regular.ttf" id="6_xrgxt"]
+[ext_resource type="FontFile" uid="uid://c57rr4irpoc45" path="res://Assets/Fonts/Born2bSportyV10.ttf" id="7_j6bkh"]
+[ext_resource type="AudioStream" uid="uid://smbkcqot8l6l" path="res://Assets/Sounds/buy_upgrade.mp3" id="8_j6bkh"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_j6bkh"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_rfa6b")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_1mnim")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_01br3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_xrgxt")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 10.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mufi8"]
+size = Vector2(81, 66)
+
+[node name="DivinePowerUp" type="Area2D" unique_id=2097895075]
+script = ExtResource("1_1mnim")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=457503813]
+scale = Vector2(3, 3)
+sprite_frames = SubResource("SpriteFrames_j6bkh")
+animation = &"idle"
+autoplay = "idle"
+frame_progress = 0.14167759
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2095327467]
+position = Vector2(-0.5, 0)
+shape = SubResource("RectangleShape2D_mufi8")
+
+[node name="LabelE" type="Label" parent="." unique_id=1470726775]
+visible = false
+offset_left = -42.0
+offset_top = -72.0
+offset_right = -2.0
+offset_bottom = -31.0
+theme_override_fonts/font = ExtResource("6_xrgxt")
+theme_override_font_sizes/font_size = 32
+text = "E"
+
+[node name="LabelB" type="Label" parent="." unique_id=569713694]
+visible = false
+offset_left = -15.0
+offset_top = -65.0
+offset_right = 25.0
+offset_bottom = -24.0
+theme_override_fonts/font = ExtResource("7_j6bkh")
+theme_override_font_sizes/font_size = 36
+text = "B:"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=2118590934]
+stream = ExtResource("8_j6bkh")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]

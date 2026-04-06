@@ -1,0 +1,32 @@
+[gd_scene format=3 uid="uid://2xirhiga428n"]
+
+[ext_resource type="FontFile" uid="uid://b1usx1lu1758v" path="res://Assets/Fonts/Silkscreen-Regular.ttf" id="1_3bbul"]
+[ext_resource type="Script" uid="uid://cnxktbakx41d8" path="res://Assets/Scripts/trade_number.gd" id="1_4t7v0"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4t7v0"]
+size = Vector2(83.5, 48)
+
+[node name="TradeNumber" type="RigidBody2D" unique_id=448670846]
+gravity_scale = 0.8
+contact_monitor = true
+max_contacts_reported = 5
+script = ExtResource("1_4t7v0")
+
+[node name="Label" type="Label" parent="." unique_id=1932961173]
+offset_right = 88.0
+offset_bottom = 82.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("1_3bbul")
+theme_override_font_sizes/font_size = 64
+text = "55"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=351054988]
+position = Vector2(48.25, 46)
+shape = SubResource("RectangleShape2D_4t7v0")
+
+[node name="Timer" type="Timer" parent="." unique_id=1986527811]
+wait_time = 0.15
+one_shot = true
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

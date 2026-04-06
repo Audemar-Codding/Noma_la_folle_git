@@ -1,7 +1,7 @@
 extends Area2D
 @onready var label_e: Label = get_node("Label")
 @export var label_dialogs: Array[String]
-@export var anim: String
+@export var anim: String = "idle"
 
 var noma_entered: bool = false
 var noma: Node2D
