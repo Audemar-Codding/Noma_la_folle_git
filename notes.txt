@@ -48,9 +48,14 @@ Done - Une fois le boss vaincu tu parle au marchand et il te dit merci mais je c
 - La statue encore qui te donne le flash pour mettre en love les mishak
 - Tu peut acheter des trucs avec les artéfacts (flash + boost de speed + upgrade heal)
 
-- Level 8-9-10 en mode bois avec les bumpers
+Done - Level 8-9-10 en mode bois avec les bumpers
 
 
 - Le the end quand tu meurt c'est toi qui tue tout le monde
-- La win c'est une mega tuff avec plein de mishak love
-- Boum boum sur le gros, et une fléche
+
+
+Bug
+- heal sound when full
+-  ! second pray sound pas cancel
+
+- Kawai update

@@ -51,6 +51,8 @@
 [ext_resource type="Texture2D" uid="uid://b0mrq5us7nu0n" path="res://Assets/Sprites/Noma/Noma-talk/Noma+Anims 32x33.png" id="43_ws5on"]
 [ext_resource type="Texture2D" uid="uid://bsp6uiuxg4p7m" path="res://Assets/Sprites/Noma/Noma-talk/Noma+Anims 32x34.png" id="44_4n4la"]
 [ext_resource type="AudioStream" uid="uid://ocm1np7b46vk" path="res://Assets/Sounds/flash8bit.mp3" id="51_8sqqc"]
+[ext_resource type="AudioStream" uid="uid://b0mtaubakfppr" path="res://Assets/Sounds/Catgirl Fighting SFX/jump/006_jump.wav" id="52_7ml6q"]
+[ext_resource type="AudioStream" uid="uid://dwe7uma1o6liv" path="res://Assets/Sounds/Catgirl Fighting SFX/swing/007_swing.wav" id="53_gp7wn"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_k8jln"]
 size = Vector2(12.333334, 17.333334)
@@ -292,7 +294,7 @@ shape = SubResource("RectangleShape2D_pfv56")
 
 [node name="DivineVoices" type="AudioStreamPlayer" parent="Audios" unique_id=1315702480]
 stream = SubResource("AudioStreamMP3_efhsq")
-volume_db = -25.0
+volume_db = -30.778
 
 [node name="JumpAudio" type="AudioStreamPlayer" parent="Audios" unique_id=1733800209]
 stream = SubResource("AudioStreamWAV_k8jln")
@@ -301,6 +303,13 @@ stream = SubResource("AudioStreamWAV_k8jln")
 stream = ExtResource("51_8sqqc")
 volume_db = -12.421
 pitch_scale = 0.46
+
+[node name="JumpKawaiAudio" type="AudioStreamPlayer" parent="Audios" unique_id=1020141119]
+stream = ExtResource("52_7ml6q")
+pitch_scale = 1.1
+
+[node name="FlashKawaiAudio" type="AudioStreamPlayer" parent="Audios" unique_id=2146952949]
+stream = ExtResource("53_gp7wn")
 
 [node name="Timer" type="Node2D" parent="." unique_id=1435242983]
 

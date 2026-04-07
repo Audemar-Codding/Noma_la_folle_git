@@ -323,7 +323,6 @@ tile_set = SubResource("TileSet_t7rln")
 position = Vector2(81, 140.00003)
 scale = Vector2(5, 5)
 slide_on_ceiling = false
-is_dropping = true
 
 [node name="Artefacts" type="Node2D" parent="." unique_id=962725578]
 

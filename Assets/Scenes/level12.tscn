@@ -10,6 +10,7 @@
 [ext_resource type="FontFile" uid="uid://b1usx1lu1758v" path="res://Assets/Fonts/Silkscreen-Regular.ttf" id="8_c7nna"]
 [ext_resource type="AudioStream" uid="uid://b4evcgcr0jqwu" path="res://Assets/Sounds/Gift.mp3" id="9_gvuv7"]
 [ext_resource type="Texture2D" uid="uid://bqiw4ed4ydjoj" path="res://Assets/Sprites/Props/Cadeau/cadeau1.png" id="9_i7c3a"]
+[ext_resource type="Texture2D" uid="uid://cjwgsfjvrkwkr" path="res://Assets/icon.jpeg" id="9_sfl36"]
 [ext_resource type="Texture2D" uid="uid://6tyv7aiqsg0j" path="res://Assets/Sprites/Props/Cadeau/cadeau2.png" id="10_hj6wr"]
 [ext_resource type="AudioStream" uid="uid://6kykhws5f5h5" path="res://Assets/Sounds/birthdaymusic.mp3" id="11_3hd8j"]
 [ext_resource type="Texture2D" uid="uid://cnr1gh3i6k4bs" path="res://Assets/Sprites/Noma/Noma-craft/Noma+Anims 32x32.png" id="13_4800t"]
@@ -35,9 +36,14 @@
 [ext_resource type="Texture2D" uid="uid://dv471etq4q7mu" path="res://Assets/Sprites/Enemies/Mishak01/Mish-Idle/running Animation 32x32 (16x16)5.png" id="33_qpprh"]
 [ext_resource type="Texture2D" uid="uid://dhpjbngmq6nki" path="res://Assets/Sprites/Enemies/Mishak01/Mish-Idle/running Animation 32x32 (16x16)6.png" id="34_wjnlt"]
 [ext_resource type="Texture2D" uid="uid://c0q6sckxs75sa" path="res://Assets/Sprites/Enemies/Mishak01/Mish-Idle/running Animation 32x32 (16x16)7.png" id="35_k3e57"]
+[ext_resource type="Texture2D" uid="uid://c6c4s8i5gy31o" path="res://Assets/Sprites/Noma/Noma-attack/Noma+Anims 32x32.png" id="35_mdukk"]
 [ext_resource type="Texture2D" uid="uid://0otg7v62f6wg" path="res://Assets/Sprites/Enemies/Mishak01/Mish-Idle/running Animation 32x32 (16x16)8.png" id="36_fodul"]
+[ext_resource type="Texture2D" uid="uid://js4bivw3050h" path="res://Assets/Sprites/Noma/Noma-attack/Noma+Anims 32x33.png" id="36_o7xhj"]
+[ext_resource type="Texture2D" uid="uid://sliraxjl788b" path="res://Assets/Sprites/Noma/Noma-attack/Noma+Anims 32x34.png" id="37_1by84"]
 [ext_resource type="Texture2D" uid="uid://cx4odiplkq82g" path="res://Assets/Sprites/Enemies/Mishak01/Mish-Idle/running Animation 32x32 (16x16)9.png" id="37_855ia"]
+[ext_resource type="Texture2D" uid="uid://dmb3bvg2a26yy" path="res://Assets/Sprites/Noma/Noma-attack/Noma+Anims 32x35.png" id="38_ew6ic"]
 [ext_resource type="FontFile" uid="uid://cvyub25h05w0d" path="res://Assets/Fonts/MysteryQuest-Regular.ttf" id="38_pawgx"]
+[ext_resource type="PackedScene" uid="uid://cht4oftnj1cw5" path="res://Assets/Scenes/confettis.tscn" id="40_o7xhj"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_uoyjf"]
 texture = ExtResource("3_gvuv7")
@@ -324,31 +330,6 @@ physics_layer_0/collision_layer = 2
 physics_layer_0/collision_mask = 2
 sources/0 = SubResource("TileSetAtlasSource_if0tp")
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_3hd8j"]
-size = Vector2(173, 164)
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_j1hr0"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("9_i7c3a")
-}, {
-"duration": 1.0,
-"texture": ExtResource("10_hj6wr")
-}],
-"loop": false,
-"name": &"gift",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("9_i7c3a")
-}],
-"loop": true,
-"name": &"idle",
-"speed": 5.0
-}]
-
 [sub_resource type="SpriteFrames" id="SpriteFrames_domsb"]
 animations = [{
 "frames": [{
@@ -440,6 +421,54 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="SpriteFrames" id="SpriteFrames_qhvaa"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("35_mdukk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("36_o7xhj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("37_1by84")
+}, {
+"duration": 1.0,
+"texture": ExtResource("38_ew6ic")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}]
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_1by84"]
+viewport_path = NodePath("SubViewport")
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3hd8j"]
+size = Vector2(173, 164)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_j1hr0"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("9_i7c3a")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_hj6wr")
+}],
+"loop": false,
+"name": &"gift",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("9_i7c3a")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}]
+
 [node name="LevelRoot" type="Node2D" unique_id=1201006017]
 script = ExtResource("1_c7nna")
 
@@ -467,10 +496,9 @@ scale = Vector2(3, 3)
 tile_set = SubResource("TileSet_t7rln")
 
 [node name="Noma" parent="." unique_id=770059937 instance=ExtResource("4_c7nna")]
-position = Vector2(118, 481)
+position = Vector2(140.00002, 608)
 scale = Vector2(5, 5)
 slide_on_ceiling = false
-is_dropping = true
 
 [node name="Artefacts" type="Node2D" parent="." unique_id=962725578]
 
@@ -485,35 +513,8 @@ scale = Vector2(1, 1e-05)
 one_way = true
 down = true
 
-[node name="DialogInteract" type="Node2D" parent="." unique_id=427222238]
-
-[node name="DialogProps" type="Area2D" parent="DialogInteract" unique_id=710169576]
-position = Vector2(12, 337)
-script = ExtResource("6_ter2g")
-label_dialogs = Array[String](["J'ai beaucoup d'idées mais peu de temps.", "Je ne peut pas ajouter le mode massacre ou Noma porte un casque.", "Je ne peut pas tous nous faire en boss.", "Et je ne peut pas faire une joli fin.", "Donc voila la fin du pauvre.", "(On est dans la tête de noma 😭)"])
-metadata/_edit_group_ = true
-
-[node name="Label" type="Label" parent="DialogInteract/DialogProps" unique_id=423879884]
-visible = false
-offset_left = 603.0
-offset_top = 17.0
-offset_right = 643.0
-offset_bottom = 105.0
-theme_override_fonts/font = ExtResource("8_c7nna")
-theme_override_font_sizes/font_size = 64
-text = "E"
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="DialogInteract/DialogProps" unique_id=568354746]
-position = Vector2(630, 254)
-shape = SubResource("RectangleShape2D_3hd8j")
-
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="DialogInteract/DialogProps" unique_id=398493017]
-position = Vector2(629, 209)
-scale = Vector2(5, 5)
-sprite_frames = SubResource("SpriteFrames_j1hr0")
-animation = &"gift"
-
 [node name="Audio" type="Node2D" parent="." unique_id=1646490877]
+position = Vector2(2, 0)
 
 [node name="AniverssaireAudio" type="AudioStreamPlayer" parent="Audio" unique_id=2050795570]
 stream = ExtResource("9_gvuv7")
@@ -525,6 +526,13 @@ pitch_scale = 1.3
 parameters/looping = true
 
 [node name="Party" type="Node2D" parent="." unique_id=414961589]
+visible = false
+
+[node name="NORRIN" type="Sprite2D" parent="Party" unique_id=215603505]
+modulate = Color(1, 1, 1, 0)
+position = Vector2(658, 356.5)
+scale = Vector2(4.932773, 2.5545852)
+texture = ExtResource("9_sfl36")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Party" unique_id=1584216773]
 position = Vector2(1052, 622)
@@ -583,12 +591,13 @@ sprite_frames = SubResource("SpriteFrames_pfeml")
 autoplay = "default"
 frame_progress = 0.5435018
 
-[node name="AnimatedSprite2D9" type="AnimatedSprite2D" parent="Party" unique_id=1960405236]
-position = Vector2(1175, 644)
-scale = Vector2(3, 3)
-sprite_frames = SubResource("SpriteFrames_pfeml")
-autoplay = "default"
-frame_progress = 0.5435018
+[node name="AnimatedSprite2D10" type="AnimatedSprite2D" parent="Party" unique_id=387991978]
+position = Vector2(1167, 621)
+scale = Vector2(5, 5)
+sprite_frames = SubResource("SpriteFrames_qhvaa")
+animation = &"idle"
+autoplay = "idle"
+frame_progress = 0.032608464
 
 [node name="Label" type="Label" parent="Party" unique_id=738172717]
 offset_left = 131.0
@@ -599,6 +608,38 @@ theme_override_fonts/font = ExtResource("38_pawgx")
 theme_override_font_sizes/font_size = 96
 text = "JOYEUX ANNIVERSSAIRE"
 
+[node name="Confettis" parent="Party" unique_id=1725833951 instance=ExtResource("40_o7xhj")]
+position = Vector2(642, 569)
+texture = SubResource("ViewportTexture_1by84")
+
+[node name="DialogInteract" type="Node2D" parent="." unique_id=427222238]
+
+[node name="DialogProps" type="Area2D" parent="DialogInteract" unique_id=710169576]
+position = Vector2(12, 337)
+script = ExtResource("6_ter2g")
+label_dialogs = Array[String](["J'ai beaucoup d'idées mais peu de temps.", "Je ne peut pas ajouter le mode massacre ou Noma porte un casque.", "Je ne peut pas tous nous faire en boss.", "Mais j'ai réunis toute mes économies pour un ultime cadeaux !"])
+metadata/_edit_group_ = true
+
+[node name="Label" type="Label" parent="DialogInteract/DialogProps" unique_id=423879884]
+visible = false
+offset_left = 603.0
+offset_top = 17.0
+offset_right = 643.0
+offset_bottom = 105.0
+theme_override_fonts/font = ExtResource("8_c7nna")
+theme_override_font_sizes/font_size = 64
+text = "E"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DialogInteract/DialogProps" unique_id=568354746]
+position = Vector2(630, 254)
+shape = SubResource("RectangleShape2D_3hd8j")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="DialogInteract/DialogProps" unique_id=398493017]
+position = Vector2(629, 209)
+scale = Vector2(5, 5)
+sprite_frames = SubResource("SpriteFrames_j1hr0")
+animation = &"gift"
+
+[connection signal="finished" from="Audio/AniverssaireAudio" to="." method="_on_aniverssaire_audio_finished"]
 [connection signal="body_entered" from="DialogInteract/DialogProps" to="DialogInteract/DialogProps" method="_on_body_entered"]
 [connection signal="body_exited" from="DialogInteract/DialogProps" to="DialogInteract/DialogProps" method="_on_body_exited"]
-[connection signal="finished" from="Audio/AniverssaireAudio" to="." method="_on_aniverssaire_audio_finished"]

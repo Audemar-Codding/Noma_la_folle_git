@@ -70,7 +70,9 @@ func apply_effect():
 			start_dialog.emit(["Vitesse boosté !"], "jumping")
 		Effects.SOUND_JUMP:
 			noma.kawai_sound = true
-			start_dialog.emit(["ENJOY THE CUTENESS","Side Effect of Cringe Included"], "jumping")
+			main.save_variables.kawai = true
+			start_dialog.emit(["ENJOY THE CUTENESS"], "jumping")
 		Effects.FLASH:
 			noma.ability["flash"] = true
+			main.save_variables.flash = true
 			start_dialog.emit(["Divine Flash obtenu !","Utilise le flash avec L !"], "jumping")

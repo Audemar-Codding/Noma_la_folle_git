@@ -1,0 +1,31 @@
+[gd_scene format=3 uid="uid://cht4oftnj1cw5"]
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_j05n1"]
+viewport_path = NodePath("SubViewport")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_a64xx"]
+particle_flag_disable_z = true
+emission_shape = 1
+emission_sphere_radius = 40.43
+angle_min = -720.0
+angle_max = 113.000015
+velocity_pivot = Vector3(0, -1, 0)
+direction = Vector3(0, -1, 0)
+spread = 68.007
+initial_velocity_min = 84.95
+initial_velocity_max = 331.81
+gravity = Vector3(0, 98, 0)
+
+[node name="Confettis" type="GPUParticles2D" unique_id=1725833951]
+position = Vector2(608, 569)
+amount = 12
+texture = SubResource("ViewportTexture_j05n1")
+process_material = SubResource("ParticleProcessMaterial_a64xx")
+
+[node name="SubViewport" type="SubViewport" parent="." unique_id=1300143870]
+size = Vector2i(8, 16)
+
+[node name="ColorRect" type="ColorRect" parent="SubViewport" unique_id=1251179288]
+offset_right = 32.0
+offset_bottom = 64.0
+color = Color(0.82978106, 0.00054349244, 0.82977545, 1)

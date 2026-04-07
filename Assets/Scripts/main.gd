@@ -16,13 +16,18 @@ extends Node2D
 
 # Variables
 var current_score: int = 0
-var level: int = 11
+var level: int = 1
 var level_modif: int = 1
 var levelOneWay: bool = false
 var current_level_root: Node = null
 var noma: CharacterBody2D
-var nomalife: float = 80
+var nomalife: float = 90
 
+var save_variables = {
+	"pray": false,
+	"flash": false,
+	"kawai": false
+}
 
 func _ready() -> void:
 	current_level_root = get_node("LevelRoot")
@@ -168,5 +173,6 @@ func _on_noma_hit(dmg) -> void:
 func _on_noma_heal(heal) -> void:
 	if nomalife <= 100:
 		nomalife = min(nomalife + heal, 100)
-		fill_audio.play()
 		actual_vie_panel.size.x = (float(nomalife)/100 * 146.00)
+	if nomalife < 100:
+		fill_audio.play()

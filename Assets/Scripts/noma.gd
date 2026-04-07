@@ -7,6 +7,8 @@ extends CharacterBody2D
 @onready var jump_audio: AudioStreamPlayer = $Audios/JumpAudio
 @onready var divine_voices: AudioStreamPlayer = $Audios/DivineVoices
 @onready var flash_audio: AudioStreamPlayer = $Audios/FlashAudio
+@onready var jump_kawai_audio: AudioStreamPlayer = $Audios/JumpKawaiAudio
+@onready var flash_kawai_audio: AudioStreamPlayer = $Audios/FlashKawaiAudio
 
 # Timer
 @onready var coyote_timer: Timer = $Timer/CoyoteTimer
@@ -32,12 +34,13 @@ var is_on_dialog: bool = false
 var invulnerability: bool = false
 var hit: bool = false
 @export var is_dropping: bool = false
-var kawai_sound: bool = false
 
+var kawai_sound: bool
 var ability = {
-	"pray": true,
-	"flash": true
+	"pray": false,
+	"flash": false
 }
+
 
 signal landed
 signal heal
@@ -45,6 +48,12 @@ signal heal
 func _ready() -> void:
 	name = "Noma"
 	animated_sprite_2d.animation_finished.connect(_on_anim_finished)
+	
+	var save_variables = get_node("/root/Main").save_variables
+	
+	ability["pray"] = save_variables.pray
+	ability["flash"] = save_variables.flash
+	kawai_sound = save_variables.kawai
 
 func _physics_process(delta: float) -> void:
 	var anim
@@ -71,6 +80,8 @@ func _physics_process(delta: float) -> void:
 			is_flashing = true
 			can_move = false
 			idle_anim = "flash"
+			if kawai_sound:
+				flash_kawai_audio.play()
 
 	# Add animation
 	if (velocity.x > 1 or velocity.x < -1) and can_move:
@@ -112,6 +123,8 @@ func _physics_process(delta: float) -> void:
 			can_jump = false
 			feet_on_platform = false
 			trigger_jump = false
+			if kawai_sound:
+				jump_kawai_audio.play()
 
 		# Get the input direction and handle the movement/deceleration.
 		var direction := Input.get_axis("left", "right")
@@ -166,7 +179,7 @@ func _on_anim_finished():
 		invulnerability_timer.start()
 
 func _on_heal_timer_timeout() -> void:
-	heal.emit(2)
+	heal.emit(4)
 
 func _on_invulnerability_timer_timeout() -> void:
 	invul_count += 1

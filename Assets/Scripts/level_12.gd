@@ -6,6 +6,7 @@ var base_music: AudioStreamPlayer
 @onready var music_audio: AudioStreamPlayer = $Audio/MusicAudio
 @onready var animated_sprite_2d: AnimatedSprite2D = $DialogInteract/DialogProps/AnimatedSprite2D
 @onready var party: Node2D = $Party
+@onready var norrin: Sprite2D = $Party/NORRIN
 
 func _ready() -> void:
 	main = get_node("/root/Main")
@@ -22,3 +23,5 @@ func _start_party() -> void:
 func _on_aniverssaire_audio_finished() -> void:
 	music_audio.play()
 	party.visible = true
+	var t = create_tween()
+	t.tween_property(norrin, "modulate", Color(1, 1, 1, 1), 20.0)

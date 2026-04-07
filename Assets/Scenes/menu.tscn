@@ -82,6 +82,7 @@ texture = ExtResource("4_dkalm")
 
 [node name="DoomAudio" type="AudioStreamPlayer" parent="." unique_id=773611835]
 stream = ExtResource("5_fjdk5")
+volume_db = -28.247
 autoplay = true
 
 [connection signal="pressed" from="CanvasLayer/Button" to="." method="_on_button_pressed"]

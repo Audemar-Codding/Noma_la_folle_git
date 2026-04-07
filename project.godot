@@ -11,9 +11,11 @@ config_version=5
 [application]
 
 config/name="Noma la fole"
-run/main_scene="uid://bq2po3a3bt424"
+run/main_scene="uid://cimg3nxbew0gd"
 config/features=PackedStringArray("4.6")
-config/icon="res://icon.png"
+run/max_fps=120
+boot_splash/bg_color=Color(0, 0, 0, 1)
+config/icon="uid://cjwgsfjvrkwkr"
 
 [display]
 
